@@ -1,0 +1,262 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Tahoma, Arial, sans-serif;
+    background-color: #eef1f5;
+    margin: 0;
+    padding: 0;
+}
+
+.quiz-app {
+    margin: 20px auto;
+    max-width: 1000px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Quiz Info */
+.quiz-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+}
+
+.quiz-info .category,
+.quiz-info .count {
+    flex: 1;
+}
+
+.quiz-info .count {
+    text-align: right;
+}
+
+/* Quiz Area */
+.quiz-area {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: -15px;
+}
+
+.quiz-area h2 {
+    margin: 0;
+    font-size: 22px;
+    color: #222;
+}
+
+/* Answers Area */
+.answers-area {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.answers-area .answer {
+    background-color: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    transition: background-color 0.3s ease;
+    gap: 15px;
+}
+
+.answers-area .answer:last-child {
+    margin-bottom: 0;
+}
+
+.answers-area input[type="radio"] {
+    display: none;
+}
+
+.answers-area label {
+    cursor: pointer;
+    font-weight: bold;
+    color: #555;
+    font-size: 15px;
+    padding-left: 30px;
+    position: relative;
+    display: block;
+    line-height: 1.6;
+}
+
+.answers-area label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 3px;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #0075ff;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.answers-area input[type="radio"]:checked+label {
+    color: #0075ff;
+}
+
+.answers-area input[type="radio"]:checked+label::before {
+    background-color: #0075ff;
+}
+
+/* Submit Button */
+.submit-button {
+    background-color: #0075ff;
+    display: block;
+    width: 200px;
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 6px;
+    margin: 15px auto;
+    color: #fff;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.submit-button:hover {
+    background-color: #0075ffd9;
+}
+
+/* Bullets */
+.bullets {
+    border-top: 1px solid #dfdfdf;
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    align-items: center;
+    gap: 10px;
+}
+
+.bullets .spans {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+.bullets .spans span {
+    width: 20px;
+    height: 20px;
+    background-color: #ddd;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    border-radius: 50%;
+}
+
+.bullets .spans .active {
+    background-color: #0075ff;
+}
+
+.bullets .countdown {
+    border: 2px solid #0075ff;
+    padding: 5px 10px;
+    border-radius: 7px;
+    color: #0075ff;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* Result */
+.result {
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.result .bad {
+    color: #dc0a0a;
+}
+
+.result .good {
+    color: #009688;
+}
+
+.result .perfect {
+    color: #0075ff;
+}
+
+/* ========================
+     RESPONSIVE DESIGN 
+     ======================== */
+
+@media (max-width: 1024px) {
+    .quiz-app {
+        margin: 20px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .quiz-info {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .quiz-info .count {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .submit-button {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .bullets {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .bullets .spans {
+        justify-content: center;
+    }
+
+    .bullets .countdown {
+        align-self: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .quiz-area h2 {
+        font-size: 18px;
+    }
+
+    .answers-area label {
+        font-size: 14px;
+        padding-left: 25px;
+    }
+
+    .answers-area label::before {
+        width: 16px;
+        height: 16px;
+        top: 4px;
+    }
+
+    .submit-button {
+        padding: 8px;
+        font-size: 15px;
+    }
+
+    .bullets .countdown {
+        font-size: 14px;
+        padding: 4px 8px;
+    }
+}
