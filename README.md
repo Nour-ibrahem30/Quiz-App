@@ -1,4 +1,4 @@
-# 🧠 Quiz App – Interactive Coding Vibe
+# 🧠 Quiz App 
 
 **Quiz App** is a fully responsive and interactive multiple-choice quiz application built using HTML, CSS, and JavaScript. It offers a clean user experience, real-time progress tracking, and performance feedback after each session.
 
